@@ -1,0 +1,24 @@
+{
+  "stocks": [
+    {
+      "id": 100,
+      "Name": "Iphone 5",
+      "Price": 45454
+    },
+    {
+      "id": 101,
+      "Name": "Iphone SE",
+      "Price": 55454
+    },
+    {
+      "id": 103,
+      "Name": "Iphone X",
+      "Price": 155454
+    },
+    {
+      "id": 104,
+      "Name": "Iphone 8",
+      "Price": "152"
+    }
+  ]
+}

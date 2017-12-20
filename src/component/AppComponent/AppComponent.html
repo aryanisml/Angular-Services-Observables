@@ -1,0 +1,8 @@
+<h2>Parent Component</h2>
+<input type="text" name="myName" [(ngModel)]="myName" />
+<child-app [criterialist]="CriteriaList" [myname]="myName"></child-app>
+<br />
+Add Stock
+Stock Name <input type="text" name="stockname" [(ngModel)]="model.Name">
+Stock Qty <input type="text" name="stockqty" [(ngModel)]="model.Price">
+<button (click)="Save()">Add</button>
