@@ -1,11 +1,12 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "../component/AppComponent/AppComponent";
 import {ChildComponent} from "../component/ChildComponent/ChildComponent"
+import { ReactiveFormComponent } from "../component/FormComponent/ReactiveFormComponent";
 
 import { DataService } from "../services/DataService";
 
@@ -13,9 +14,10 @@ import { DataService } from "../services/DataService";
     imports: [
         BrowserModule,
        FormsModule,
-       HttpModule],
+       HttpModule,
+       ReactiveFormsModule],
     exports: [],
-    declarations: [AppComponent,ChildComponent],
+    declarations: [AppComponent,ChildComponent,ReactiveFormComponent],
     providers: [DataService],
     bootstrap:[AppComponent]
 })

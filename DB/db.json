@@ -19,6 +19,16 @@
       "id": 104,
       "Name": "Iphone 8",
       "Price": "152"
+    },
+    {
+      "id": 105,
+      "Name": "Iphone 5C",
+      "Price": "45454"
+    },
+    {
+      "id": 106,
+      "Name": "Iphone 4",
+      "Price": "514"
     }
   ]
 }

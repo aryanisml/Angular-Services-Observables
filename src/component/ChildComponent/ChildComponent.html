@@ -6,3 +6,9 @@
 
 
 <label for="">{{myModifiedName}}</label>
+
+<input type="text" [(ngModel)]="sharedName">
+
+<div>
+<button class="btn btn-primary" (click)="childClick(sharedName)">Observable Data Sharing</button>
+</div>

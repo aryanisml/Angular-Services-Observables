@@ -5,12 +5,15 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { StockModel } from '../model/StockModel'
+import { Subject } from "rxjs/Subject";
 
 @Injectable()
 export class DataService {
 
     private StockModel :StockModel[];
     private Url:string ='http://localhost:90/stocks';
+    
+    sharedData=new Subject();
 
     constructor(private http: Http) { 
        this.StockModel=[];
