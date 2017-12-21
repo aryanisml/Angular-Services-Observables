@@ -27,6 +27,10 @@ export class DataService {
              .catch(this.handleError);
     }
 
+
+
+    
+
     AddStock(newStock:StockModel):Observable<StockModel[]>{
 
         let _body= JSON.stringify(newStock);

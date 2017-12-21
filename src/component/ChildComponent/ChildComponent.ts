@@ -13,12 +13,14 @@ import { DataService } from "../../services/DataService";
 export class ChildComponent implements OnInit, OnChanges {
     @Input() criterialist: StockModel[];
     @Input() myname: string;
+    criteriaListAsync=this._DataService.GetStock();
     private myModifiedName: string;
     constructor(private _DataService: DataService) {
         console.log('Child Constructor');
         this.criterialist = [];
         this.myname = '';
         this.myModifiedName = '';
+       
     }
 
     ngOnInit() {

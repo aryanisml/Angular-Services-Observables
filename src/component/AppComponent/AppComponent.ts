@@ -14,6 +14,7 @@ import { Subscription } from "rxjs/Subscription";
 export class AppComponent implements OnInit {
 
     private CriteriaList:StockModel[];
+  //  CriteriaListAsync= this._DataService.GetStock();
     private myName:string;
     private model=new StockModel(0,'',0);
     sharedNameInfo:string="swap";
@@ -26,8 +27,6 @@ export class AppComponent implements OnInit {
         console.dir(new StockModel(0,'',0));
         console.log('Parent Constructor');      
         this.CriteriaList=[];
-         
-
         const myNumber= Observable.interval(2000)
         .map((data:number)=>{
             return data*2;
@@ -99,5 +98,8 @@ export class AppComponent implements OnInit {
         this._DataService.sharedData.subscribe((name:string)=>{
             this.sharedNameInfo=name;
         });
+         
     }
+
+   
 }

@@ -4,6 +4,26 @@
     </li>
 </ul> 
 
+ <table>
+    <tr>
+        <thead>
+            <td>Name</td>
+            <td>Price</td>
+        </thead>
+    </tr>
+    <tr>
+        <tbody *ngFor="let criteria of criteriaListAsync |async ">
+            <td>
+                    {{criteria.Name}}
+            </td>
+                <td>
+                    {{criteria.Price}}
+            </td>
+        </tbody>
+    </tr>
+</table> 
+
+
 
 <label for="">{{myModifiedName}}</label>
 
