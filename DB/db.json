@@ -11,24 +11,14 @@
       "Price": 55454
     },
     {
+      "id": 102,
+      "Name": "Test",
+      "Price": "232"
+    },
+    {
       "id": 103,
-      "Name": "Iphone X",
-      "Price": 155454
-    },
-    {
-      "id": 104,
-      "Name": "Iphone 8",
-      "Price": "152"
-    },
-    {
-      "id": 105,
-      "Name": "Iphone 5C",
-      "Price": "45454"
-    },
-    {
-      "id": 106,
-      "Name": "Iphone 4",
-      "Price": "514"
+      "Name": "sdaf",
+      "Price": "23"
     }
   ]
 }

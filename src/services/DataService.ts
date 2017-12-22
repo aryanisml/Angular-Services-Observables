@@ -14,22 +14,17 @@ export class DataService {
     private Url:string ='http://localhost:90/stocks';
     
     sharedData=new Subject();
-
+    sharedStockData=new Subject();
     constructor(private http: Http) { 
        this.StockModel=[];
     }
-    GetStock():Observable<StockModel[]>{
+    GetStock(){
        return this.http
              .get(this.Url)
              .map((response: Response) => {
-                 return <StockModel[]>response.json();
-             })
-             .catch(this.handleError);
+                 return response.json();
+             }).catch(this.handleError);
     }
-
-
-
-    
 
     AddStock(newStock:StockModel):Observable<StockModel[]>{
 
@@ -37,6 +32,7 @@ export class DataService {
         let _headers= new Headers({'Content-Type':'application/json'});
         let _options= new RequestOptions({headers: _headers}); 
         let _url=this.Url;
+        //let _url='https://angualr5lab.firebaseio.com/data.json';
         return this.http.post(_url,_body,_options)
                       .map( (response:Response) => {
                         return response.json();

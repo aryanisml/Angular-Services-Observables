@@ -88,6 +88,7 @@ export class AppComponent implements OnInit {
 
     Save(){
         this.addStock();  
+        this._DataService.sharedStockData.next(this.CriteriaList);
     }
 
     ngOnInit() { 

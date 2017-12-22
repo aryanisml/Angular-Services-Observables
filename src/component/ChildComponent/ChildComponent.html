@@ -1,34 +1,55 @@
- <ul>
-    <li *ngFor="let criteria of criterialist">
-           {{criteria.Name}}
-    </li>
-</ul> 
+<div class="col-xs-12">
+    <h1>
+        Child Component
+    </h1>
+    <div class="row">
+        <label for="" style="color:blue">On Changes Example</label> <label for="">{{myModifiedName}}</label>
+    </div>
+    <div class="row">
+        <label for=""> Input property Binding</label>
+        <ul>
+            <li *ngFor="let criteria of criterialist">
+                {{criteria.Name}}
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <label for=""> Async Pipe Example</label>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
 
- <table>
-    <tr>
-        <thead>
-            <td>Name</td>
-            <td>Price</td>
-        </thead>
-    </tr>
-    <tr>
-        <tbody *ngFor="let criteria of criteriaListAsync |async ">
-            <td>
-                    {{criteria.Name}}
-            </td>
-                <td>
-                    {{criteria.Price}}
-            </td>
-        </tbody>
-    </tr>
-</table> 
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let criteria of criteriaListAsync |async "> 
+                    <!-- <tr *ngFor="let criteria of citeriaTest"> -->
+                        <!-- <tr *ngFor="let criteria of criterialist"> -->
+                    <td>
+                        {{criteria.Name}}
+                    </td>
+                    <td>
+                        {{criteria.Price}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
 
+    </div>
+    <div class="row">
+        <label for="" style="color:green">
+                Observable Data Sharing without Emit 
+        </label>
+        <input type="text" [(ngModel)]="sharedName">
+        <button class="btn btn-primary" (click)="childClick(sharedName)">Change</button>
 
-<label for="">{{myModifiedName}}</label>
+    </div>
 
-<input type="text" [(ngModel)]="sharedName">
-
-<div>
-<button class="btn btn-primary" (click)="childClick(sharedName)">Observable Data Sharing</button>
 </div>

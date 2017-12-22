@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (ngSubmit)="addPost(formGroup.value)">
+<!-- <form [formGroup]="formGroup" (ngSubmit)="addPost(formGroup.value)">
     <div class="form-container">
       <div class="row columns">
         <h1>My Reactive Form</h1>
@@ -16,4 +16,29 @@
         <input type="submit" class="button expanded" value="Submit Form" [disabled]="!formGroup.valid">
       </div>
     </div>
-  </form>
+  </form> -->
+
+  <div class="row row-custom">
+    <div class="col-sm-5 custom-container jumbotron">
+      <form action="" class="form-horizontal">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" name="email" placeholder="Enter Email">
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" name="password" placeholder="Enter Password">
+          </div>
+          <div class="form-group checkbox" >
+            <input type="checkbox" name="checkbox"> Terms & Condition
+          </div>
+          <div class="form-group" >
+            <button class="btn btn-primary">Save</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    
+  </div>

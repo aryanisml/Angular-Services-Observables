@@ -1,16 +1,44 @@
-<h2>Parent Component</h2>
+<div class="container">
+    <h1>Parent Component</h1>
+    <div class="col-xs-12">
+        <div class="row">
+            <label for="" style="color:blue">On Changes Example</label>
+            <input type="text" name="myName" [(ngModel)]="myName" />
+        </div>
+        <div class="row">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Add Stock...</legend>
+                    <div class="form-group">
+                        <label for="">Stock Name</label>
+                        <input type="text" name="stockname" [(ngModel)]="model.Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Stock Qty</label>
+                        <input type="text" name="stockqty" [(ngModel)]="model.Price">
+                    </div>
+                    <div class="form-group">
+                        <button (click)="Save()" class="btn btn-primary">Add</button>                        
+                    </div>
+                </fieldset>
 
-<input type="text" name="myName" [(ngModel)]="myName" />
+            </form>
+        </div>
+        <div class="row">
+        <label for="" style="color:green">Observable Data Sharing</label>  
+        {{sharedNameInfo}}
+        </div>
 
-<br />
-Add Stock
-Stock Name <input type="text" name="stockname" [(ngModel)]="model.Name">
-Stock Qty <input type="text" name="stockqty" [(ngModel)]="model.Price">
-<button (click)="Save()">Add</button>
-<br/>
-Observable Data Sharing <label for="">{{sharedNameInfo}}</label>
-<br/>
-<child-app [criterialist]="CriteriaList" [myname]="myName" >
-</child-app>
+      <div class="row">
+          <hr>
+            <child-app [criterialist]="CriteriaList" [myname]="myName">
+            </child-app>
+
+      </div>
+        <div class="row">
+                <my-form></my-form>            
+        </div>
+    </div>
+</div>
+
 <!-- <my-form></my-form> -->
-

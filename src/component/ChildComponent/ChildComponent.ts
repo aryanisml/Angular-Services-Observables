@@ -14,6 +14,10 @@ export class ChildComponent implements OnInit, OnChanges {
     @Input() criterialist: StockModel[];
     @Input() myname: string;
     criteriaListAsync=this._DataService.GetStock();
+    
+
+    citeriaTest:StockModel[];
+
     private myModifiedName: string;
     constructor(private _DataService: DataService) {
         console.log('Child Constructor');
@@ -25,6 +29,9 @@ export class ChildComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         console.log('Child OnInit');
+        this._DataService.sharedStockData.subscribe((response:any)=>{
+          this.citeriaTest=response;
+        });        
     }
 
     ngOnChanges(changes: SimpleChanges): void {
