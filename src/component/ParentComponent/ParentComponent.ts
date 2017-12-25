@@ -79,17 +79,15 @@ export class ParentComponent implements OnInit {
             response=>{ 
                 this.model=new StockModel(0,'',0); 
                 this.loadStock();
-                
             },
              error=>console.log('Error....' ,error)
         )
-        
     }
 
 
     Save(){
-        this.addStock();  
-         this._DataService.sharedStockData.next(this.CriteriaList);
+          this.addStock();  
+          this._DataService.sharedStockData.next(this.CriteriaList);
        
     }
 
@@ -97,7 +95,6 @@ export class ParentComponent implements OnInit {
         console.log('Parent OnInit');
         this.myName='Swapnil';
         this.loadStock();
-        
         this._DataService.sharedData.subscribe((name:string)=>{
             this.sharedNameInfo=name;
         });
