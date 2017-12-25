@@ -5,16 +5,13 @@ import {Observable} from 'rxjs/Rx';
 import { Observer } from "rxjs/Observer";
 import { Subscription } from "rxjs/Subscription";
 
-import { products  } from "../../model/products";
-
-
 @Component({
-    selector: 'my-app',
-    templateUrl: './AppComponent.html'
+    selector: 'parent-app',
+    templateUrl: './ParentTemplate.html'
 })
 
-export class AppComponent implements OnInit {
-
+export class ParentComponent implements OnInit {
+   
     private CriteriaList:StockModel[];
   //  CriteriaListAsync= this._DataService.GetStock();
     private myName:string;
@@ -24,8 +21,7 @@ export class AppComponent implements OnInit {
     numberSubscription :Subscription;
     customSubscription :Subscription
 
-     //kendo grid
-    public gridData: any[] = products;
+
 
     constructor(private _DataService: DataService) {  
         console.dir(new StockModel(0,'',0));
@@ -109,6 +105,4 @@ export class AppComponent implements OnInit {
         
          
     }
-
-   
 }

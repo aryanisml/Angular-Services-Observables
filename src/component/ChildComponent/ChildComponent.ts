@@ -13,8 +13,8 @@ import { DataService } from "../../services/DataService";
 export class ChildComponent implements OnInit, OnChanges {
     @Input() criterialist: StockModel[];
     @Input() myname: string;
-    criteriaListAsync=this._DataService.GetStock();
-    
+    criteriaListAsync:any;
+    //criteriaListAsync=this._DataService.GetStock();
 
     citeriaTest:StockModel[];
 
@@ -39,6 +39,7 @@ export class ChildComponent implements OnInit, OnChanges {
         if (changes['myname']) {
             this.myModifiedName = 'Hello ' + changes['myname'].currentValue;
         }
+         this.criteriaListAsync=this._DataService.GetStock();
 
     }
     childClick(name:string){

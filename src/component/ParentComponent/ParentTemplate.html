@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>Parent Component</h1>
+    <div class="col-xs-12">
+        <div class="row">
+            <label for="" style="color:blue">On Changes Example</label>
+            <input type="text" name="myName" [(ngModel)]="myName" />
+        </div>
+        <div class="row">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Add Stock...</legend>
+                    <div class="form-group">
+                        <label for="">Stock Name</label>
+                        <input type="text" name="stockname" [(ngModel)]="model.Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Stock Qty</label>
+                        <input type="text" name="stockqty" [(ngModel)]="model.Price">
+                    </div>
+                    <div class="form-group">
+                        <button (click)="Save()" class="btn btn-primary">Add</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="row">
+            <label for="" style="color:green">Observable Data Sharing</label> {{sharedNameInfo}}
+        </div>
+        <div class="row">
+            <hr>
+            <child-app [criterialist]="CriteriaList" [myname]="myName">
+            </child-app>
+
+        </div>
+        <div class="row">
+            <!-- <kendo-grid [data]="gridData" [height]="410">
+                <kendo-grid-column field="ProductID" title="ID" width="80">
+                </kendo-grid-column>
+                <kendo-grid-column field="ProductName" title="Name" width="250">
+                </kendo-grid-column>
+                <kendo-grid-column field="Category.CategoryName" title="Category">
+                </kendo-grid-column>
+                <kendo-grid-column field="UnitPrice" title="Price" width="80">
+                </kendo-grid-column>
+                <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+                </kendo-grid-column>
+                <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+                    <ng-template kendoGridCellTemplate let-dataItem>
+                        <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+                    </ng-template>
+                </kendo-grid-column>
+            </kendo-grid> -->
+        </div>
+    </div>
+</div>
+
