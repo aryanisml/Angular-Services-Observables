@@ -22,3 +22,5 @@ export class ViewParentComponent implements OnInit {
         this.ViewChildComponent.DecreaseBy();
     }
 }
+
+//https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d

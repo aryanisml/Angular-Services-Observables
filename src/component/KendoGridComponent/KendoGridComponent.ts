@@ -8,6 +8,20 @@ import { products  } from "../../model/products";
 })
 
 export class KendoGridComponent implements OnInit {
+    public productArray:any[]=[
+        {
+          field: 'ProductID',
+          title :'ID'  
+        },
+        {
+          field: 'ProductName',
+          title :'Name'  
+        },
+        {
+          field: 'UnitPrice',
+          title :'Price'  
+        },
+    ]
     public gridData: any[] = products;
 
     constructor() { }
