@@ -9,7 +9,10 @@ import {AppComponent} from "../component/AppComponent/AppComponent";
 import {ParentComponent} from "../component/ParentComponent/ParentComponent"
 import {ChildComponent} from "../component/ChildComponent/ChildComponent"
 import { ReactiveFormComponent } from "../component/FormComponent/ReactiveFormComponent";
-import {KendoGridComponent} from  '../component/KendoGridComponent/KendoGridComponent'
+import {ViewParentComponent} from "../component/ViewChildComponent/ViewParentComponent";
+import {ViewChildComponent} from "../component/ViewChildComponent/ViewChildComponent";
+
+import {KendoGridComponent} from  '../component/KendoGridComponent/KendoGridComponent';
 
 import { DataService } from "../services/DataService";
 import { GridModule } from '@progress/kendo-angular-grid';
@@ -26,7 +29,15 @@ import GlobalRoutes from '../routings/globalroutes'
     RouterModule.forRoot(GlobalRoutes),
       ],
     exports: [],
-    declarations: [AppComponent,ParentComponent,ChildComponent,ReactiveFormComponent,KendoGridComponent],
+    declarations: [
+         AppComponent
+        ,ParentComponent
+        ,ChildComponent
+        ,ReactiveFormComponent
+        ,KendoGridComponent
+        ,ViewParentComponent
+        ,ViewChildComponent
+    ],
     providers: [DataService],
     bootstrap:[AppComponent]
 })
