@@ -11,6 +11,8 @@ import {ChildComponent} from "../component/ChildComponent/ChildComponent"
 import { ReactiveFormComponent } from "../component/FormComponent/ReactiveFormComponent";
 import {ViewParentComponent} from "../component/ViewChildComponent/ViewParentComponent";
 import {ViewChildComponent} from "../component/ViewChildComponent/ViewChildComponent";
+import { InputParentComponent } from "../component/InputComponent/InputParentComponent";
+import { InputChildComponent } from "../component/InputComponent/InputChildComponent";
 
 import {KendoGridComponent} from  '../component/KendoGridComponent/KendoGridComponent';
 
@@ -37,6 +39,8 @@ import GlobalRoutes from '../routings/globalroutes'
         ,KendoGridComponent
         ,ViewParentComponent
         ,ViewChildComponent
+        ,InputParentComponent
+        ,InputChildComponent
     ],
     providers: [DataService],
     bootstrap:[AppComponent]
