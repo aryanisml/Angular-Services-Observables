@@ -15,7 +15,7 @@ export class ParentSliderComponent implements OnInit {
 
     onSelectionChange(data:any){
         console.log(data);
-            this.selectedValue='From ' + data.from + ' To' + data.to;
+            this.selectedValue='From ' + data.from + ' To ' + data.to;
     }
 
 

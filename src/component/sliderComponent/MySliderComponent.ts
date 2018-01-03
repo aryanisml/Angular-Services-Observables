@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit, NgZone, ElementRef } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, NgZone, ElementRef, SimpleChanges } from '@angular/core';
 import * as jQuery from "jquery";
 
 @Component({
@@ -18,15 +18,28 @@ export class MySliderComponent {
         this.el = el;
     }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        if(this.initialized) {
+            for (let propName in changes) {
+                let update = {};
+                update[propName] = changes[propName].currentValue;
+                jQuery(this.inputElem).data("ionRangeSlider").update(update);
+            }
+        }
+    }
+
     private initSlider() {
 
         let that = this;
         (<any>jQuery(this.inputElem)).ionRangeSlider({
-            type: "single",
-            min: 0,
+            type: "double",
+            min: 1,
             step: 1,
             max: 6,
             grid: true,
+            from:1,
+            to:2,
+            prefix:'$',
             grid_num: 6,
             values: [
                 "0", "1",
@@ -40,11 +53,9 @@ export class MySliderComponent {
                 to: data.to
                 }
                 that.selection.emit(responseData);
-            },
-            
-            
-
+            }
         });
+
         this.initialized = true;
 
     }
