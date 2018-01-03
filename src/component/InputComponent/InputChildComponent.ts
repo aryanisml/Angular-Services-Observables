@@ -11,8 +11,8 @@ private _name:string='';
 private _modelArray:string[];
 
 @Input('myName')
-set inputModel(inputModel:string){
-   this._name=(inputModel && inputModel.trim()) || '<no-string>';
+set inputModel(myName:string){
+   this._name=(myName && myName.trim()) || '<no-string>';
 }
 
 get inputModel(){
@@ -21,22 +21,15 @@ get inputModel(){
 
 
 @Input('myArray')
-set modelArray(inputModel:string[]){
+set modelArray(myArray:string[]){
     this._modelArray=[
-        ...inputModel
+        ...myArray
     ]
 }
 
 get modelArray(){
     return this._modelArray;
 }
-
-
-
-
-
-
-
 
     constructor() {
 //        this.inputModel='';

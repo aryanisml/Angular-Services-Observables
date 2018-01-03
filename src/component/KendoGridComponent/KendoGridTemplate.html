@@ -1,6 +1,8 @@
 
 
-<kendo-grid [data]="gridData" [height]="410" >
+<kendo-grid 
+[data]="gridData" 
+[height]="410">
     <div *ngFor="let product of productArray">
         <kendo-grid-column field={{product.field}} title={{product.title}} width="80">
         </kendo-grid-column>    

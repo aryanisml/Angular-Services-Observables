@@ -9,6 +9,7 @@ import {ReactiveFormComponent} from "../component/FormComponent/ReactiveFormComp
 import {KendoGridComponent} from  '../component/KendoGridComponent/KendoGridComponent';
 import {ViewParentComponent} from "../component/ViewChildComponent/ViewParentComponent";
 import { InputParentComponent } from "../component/InputComponent/InputParentComponent";
+import { ParentSliderComponent } from "../component/sliderComponent/ParentSliderComponent"
 
 const GlobalRoutes: any[] = [
     //Default Case
@@ -39,6 +40,10 @@ const GlobalRoutes: any[] = [
     {
         path: 'inputparent', //forward path
         component: InputParentComponent
+    },
+    {
+        path: 'ionslider', //forward path
+        component: ParentSliderComponent
     }
     ,
     ///404
