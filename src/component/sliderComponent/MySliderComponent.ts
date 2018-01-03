@@ -1,45 +1,59 @@
-import {Component, ViewChild, EventEmitter,Output} from '@angular/core';
-import {IonRangeSliderComponent} from "ng2-ion-range-slider";
+import { Component, EventEmitter, Output, OnInit, NgZone, ElementRef } from '@angular/core';
+import * as jQuery from "jquery";
 
 @Component({
-  selector: 'slider-example',
-  templateUrl: './MySliderTemplate.html',
-  //styleUrls: ['./myslider.component.css']
+    selector: 'slider-example',
+    templateUrl: './MySliderTemplate.html',
+
 })
 export class MySliderComponent {
 
-  @ViewChild('advancedSliderElement') advancedSliderElement: IonRangeSliderComponent;
+    @Output() selection: EventEmitter<any> = new EventEmitter<any>();
+    private _ngZone: NgZone;
+    private el: ElementRef;
+    private inputElem: any;
+    private initialized = false;
 
-  @Output() selection : EventEmitter<any>;
+    constructor(el: ElementRef) {
+        this.el = el;
+    }
 
-  constructor(){
-      this.selection=new EventEmitter<any>();
-  }
+    private initSlider() {
 
-  min: number = 1;
-  max: number = 10;
+        let that = this;
+        (<any>jQuery(this.inputElem)).ionRangeSlider({
+            type: "single",
+            min: 0,
+            step: 1,
+            max: 6,
+            grid: true,
+            grid_num: 6,
+            values: [
+                "0", "1",
+                "2", "3",
+                "4", "5",
+                "6"
+            ],
+            onChange: function (data:any) {
+                  let responseData = {
+                from: data.from,
+                to: data.to
+                }
+                that.selection.emit(responseData);
+            },
+            
+            
 
-  simpleSlider = {name: "Simple Slider", onUpdate: Event, onFinish: Event};
-  advancedSlider = {name: "Advanced Slider", onUpdate: Event, onFinish: Event};
+        });
+        this.initialized = true;
 
-  update(slider:any, event:any) {
-    console.log("Slider updated: " + slider.name);
-    slider.onUpdate = event;
-    console.log(event.from);
-let responseData={
-    from: event.from,
-    to:event.to
-}
-    this.selection.emit(responseData);
+    }
 
-  }
+    ngOnInit() {
+        this.inputElem = this.el.nativeElement.getElementsByTagName('input')[0];
+        this.initSlider();
+    }
 
-  finish(slider:any, event:any) {
-    console.log("Slider finished: " + slider.name);
-    slider.onFinish = event;
-  }
 
-  setAdvancedSliderTo(from:any, to:any) {
-    this.advancedSliderElement.update({from: from, to:to});
-  }
+
 }
